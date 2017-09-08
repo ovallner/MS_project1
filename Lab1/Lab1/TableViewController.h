@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TableViewCell.h"
+
 
 @interface TableViewController : UITableViewController
 @property (strong, nonatomic) NSIndexPath* pokeIndex;

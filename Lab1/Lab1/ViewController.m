@@ -12,6 +12,7 @@
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *settingsButton;
+@property (weak, nonatomic) DataModel *dataModel;
 
 @end
 
@@ -19,15 +20,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.dataModel loadData];
+    
     // Do any additional setup after loading the view, typically from a nib.
-    [DataModel sharedInstance].pokemonData;
-    [NSTimer scheduledTimerWithTimeInterval:2.0
-                                     target:self
-                                   selector:@selector(logTimerCompletion)
-                                   userInfo:nil
-                                    repeats:YES];
+//    [NSTimer scheduledTimerWithTimeInterval:2.0
+//                                     target:self
+//                                   selector:@selector(logTimerCompletion)
+//                                   userInfo:nil
+//                                    repeats:YES];
     
     
+}
+
+-(DataModel *)dataModel{
+    if(!_dataModel){
+        _dataModel = [DataModel sharedInstance];
+    }
+    return _dataModel;
 }
 
 -(void)showModal:(id)sender {

@@ -7,12 +7,20 @@
 //
 
 #import "TableViewController.h"
+#import "DataModel.h"
 
 @interface TableViewController ()
-
+@property (weak,nonatomic) DataModel* dataModel;
 @end
 
 @implementation TableViewController
+
+-(DataModel*) dataModel {
+    if(!_dataModel){
+        _dataModel = [DataModel sharedInstance];
+    }
+    return _dataModel;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,7 +40,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -45,10 +53,21 @@
     UITableViewCell *cell = nil;
     
     if(indexPath.section==0){
-        cell = [tableView dequeueReusableCellWithIdentifier:@"TableCell" forIndexPath:indexPath];
-        
-        // Configure the cell...
-        cell.textLabel.text = [NSString stringWithFormat:@"%ld",(long)self.pokeIndex.row];;
+        cell = [tableView dequeueReusableCellWithIdentifier:@"NameCell" forIndexPath:indexPath];
+        cell.textLabel.text = @"Name";
+        cell.detailTextLabel.text = self.dataModel.pokemonData[self.pokeIndex.row][@"name"];
+    } else if (indexPath.section==1){
+        cell = [tableView dequeueReusableCellWithIdentifier:@"NumberCell" forIndexPath:indexPath];
+        cell.textLabel.text = @"Pokedex Number";
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@",self.dataModel.pokemonData[self.pokeIndex.row][@"id"]];
+    } else if (indexPath.section==2){
+        cell = [tableView dequeueReusableCellWithIdentifier:@"HeightCell" forIndexPath:indexPath];
+        cell.textLabel.text = @"Height";
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@",self.dataModel.pokemonData[self.pokeIndex.row][@"height"]];
+    } else if (indexPath.section==3){
+        cell = [tableView dequeueReusableCellWithIdentifier:@"WeightCell" forIndexPath:indexPath];
+        cell.textLabel.text = @"Weight";
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@",self.dataModel.pokemonData[self.pokeIndex.row][@"weight"]];
     }
     
     return cell;

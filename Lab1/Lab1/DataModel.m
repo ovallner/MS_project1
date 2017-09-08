@@ -26,35 +26,36 @@
 -(NSMutableArray*)pokemonData{
     if(!_pokemonData) {
         _pokemonData = [[NSMutableArray alloc] init];
-        NSMutableString *urlString;
-        NSURL *url;
-        
-        NSURLSessionConfiguration *defaultConfiguration;
-        NSURLSession *sessionWithoutADelegate;
-        
-        for(int i = 1; i <=20; i++){
-            
-            urlString = [NSMutableString stringWithFormat:@"https://pokeapi.co/api/v2/pokemon/%d/", i];
-            url = [NSURL URLWithString:urlString];
-            
-            defaultConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
-            sessionWithoutADelegate = [NSURLSession sessionWithConfiguration:defaultConfiguration];
-            
-            [[sessionWithoutADelegate dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                NSLog(@"Completed a url request");
-                if(error)
-                    NSLog(@"%@", error);
-                else{
-                    NSDictionary __block *pokemonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error: &error];
-                    [_pokemonData addObject:pokemonDict];
-                }
-            }] resume];
-        }
     }
     return _pokemonData;
 }
 
-
+-(void) loadData{
+    NSMutableString *urlString;
+    NSURL *url;
+    
+    NSURLSessionConfiguration *defaultConfiguration;
+    NSURLSession *sessionWithoutADelegate;
+    
+    for(int i = 1; i <=20; i++){
+        
+        urlString = [NSMutableString stringWithFormat:@"https://pokeapi.co/api/v2/pokemon/%d/", i];
+        url = [NSURL URLWithString:urlString];
+        
+        defaultConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        sessionWithoutADelegate = [NSURLSession sessionWithConfiguration:defaultConfiguration];
+        
+        [[sessionWithoutADelegate dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+            NSLog(@"Completed a url request");
+            if(error)
+                NSLog(@"%@", error);
+            else{
+                NSDictionary __block *pokemonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error: &error];
+                [self.pokemonData addObject:pokemonDict];
+            }
+        }] resume];
+    }
+}
 
 
 @end

@@ -8,5 +8,6 @@
 #import <UIKit/UIKit.h>
 @interface DataModel : UIResponder <UIApplicationDelegate>
 +(DataModel*) sharedInstance;
+-(void) loadData;
 @property (strong, nonatomic) NSMutableArray *pokemonData;
 @end
