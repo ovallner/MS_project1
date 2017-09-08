@@ -115,6 +115,7 @@
                                 <connections>
                                     <outlet property="pokeNameLabel" destination="vDh-ds-1dx" id="zeN-qf-TD4"/>
                                     <outlet property="pokeSprite" destination="dpH-7z-QvC" id="BGj-au-R4K"/>
+                                    <segue destination="Z1t-7h-EGp" kind="show" id="NdK-O1-Gbw"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
