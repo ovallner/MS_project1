@@ -29,7 +29,6 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -46,7 +45,7 @@
                                     <segue destination="jfH-Qe-fqR" kind="show" id="4qy-70-iI7"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pMv-QX-EgS">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pokeball_icon" translatesAutoresizingMaskIntoConstraints="NO" id="pMv-QX-EgS">
                                 <rect key="frame" x="123" y="125" width="128" height="128"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RDU-lc-Bg8">
@@ -68,6 +67,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="QNX-PA-ndu"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-522" y="-767"/>
         </scene>
@@ -86,13 +86,40 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PokeCell" id="ALn-6W-NvL">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PokeCell" id="ALn-6W-NvL" customClass="CollectionViewCell">
                                 <rect key="frame" x="0.0" y="50" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dpH-7z-QvC">
+                                            <rect key="frame" x="-70" y="-14" width="240" height="128"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PokeName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T61-Dk-bpH">
+                                            <rect key="frame" x="0.0" y="79" width="100" height="21"/>
+                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="dpH-7z-QvC" secondAttribute="trailing" constant="-70" id="5ny-KP-Jnb"/>
+                                    <constraint firstItem="dpH-7z-QvC" firstAttribute="leading" secondItem="ALn-6W-NvL" secondAttribute="leading" constant="-70" id="GCK-85-1OH"/>
+                                    <constraint firstAttribute="bottom" secondItem="T61-Dk-bpH" secondAttribute="bottom" id="ILd-d6-e7Q"/>
+                                    <constraint firstItem="T61-Dk-bpH" firstAttribute="leading" secondItem="ALn-6W-NvL" secondAttribute="leading" id="SGf-I4-BFx"/>
+                                    <constraint firstAttribute="trailing" secondItem="T61-Dk-bpH" secondAttribute="trailing" id="htb-xa-vvK"/>
+                                    <constraint firstAttribute="bottom" secondItem="dpH-7z-QvC" secondAttribute="bottom" constant="-14" id="vKl-cH-R0z"/>
+                                    <constraint firstItem="dpH-7z-QvC" firstAttribute="top" secondItem="ALn-6W-NvL" secondAttribute="top" constant="-14" id="xTI-OW-3w9"/>
+                                    <constraint firstItem="T61-Dk-bpH" firstAttribute="top" secondItem="ALn-6W-NvL" secondAttribute="top" constant="79" id="xjN-5p-1wq"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageView" destination="dpH-7z-QvC" id="wIC-gp-rSe"/>
+                                    <outlet property="pokeName" destination="T61-Dk-bpH" id="00g-cZ-PGY"/>
+                                    <outlet property="pokeSprite" destination="dpH-7z-QvC" id="55I-KN-CA6"/>
+                                    <segue destination="Z1t-7h-EGp" kind="show" id="C2W-9W-v0O"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewHeader" id="IBd-kb-Ncm" customClass="SearchCollectionReusableView">
@@ -120,7 +147,38 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LrI-cT-rr6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="358" y="-764"/>
+            <point key="canvasLocation" x="357.60000000000002" y="-764.16791604197908"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="PW4-aL-58o">
+            <objects>
+                <tableViewController storyboardIdentifier="PokePage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Z1t-7h-EGp" customClass="TableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="P9f-DH-q2v">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableCell" id="dDj-qo-44e">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dDj-qo-44e" id="1lb-Vs-VE6">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Z1t-7h-EGp" id="gKu-26-sui"/>
+                            <outlet property="delegate" destination="Z1t-7h-EGp" id="X65-aY-AEJ"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="00z-ow-akl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1250" y="-764"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pokeball_icon" width="128" height="128"/>
+    </resources>
 </document>

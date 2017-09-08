@@ -8,6 +8,7 @@
 
 #import "CollectionViewController.h"
 #import "SearchCollectionReusableView.h"
+#import "TableViewController.h"
 @interface CollectionViewController () <UISearchBarDelegate>
 
 @end
@@ -113,6 +114,12 @@ static NSString * const reuseIdentifier = @"PokeCell";
     if(searchBar.text!=nil || ![searchBar.text isEqual:@""]){
         [self.collectionView reloadData];
     }
+}
+
+- (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    TableViewController* tVc = [self.storyboard instantiateViewControllerWithIdentifier:@"PokePage"];
+    tVc.pokeIndex = indexPath;
+    [self.navigationController pushViewController:tVc animated:YES];
 }
 
 
