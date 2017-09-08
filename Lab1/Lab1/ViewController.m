@@ -10,9 +10,13 @@
 #import "DataModel.h"
 #import "ModalViewController.h"
 
-@interface ViewController ()
+@interface ViewController ()<UIScrollViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 @property (weak, nonatomic) DataModel *dataModel;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
+
 
 @end
 
@@ -22,14 +26,9 @@
     [super viewDidLoad];
     [self.dataModel loadData];
     
-    // Do any additional setup after loading the view, typically from a nib.
-//    [NSTimer scheduledTimerWithTimeInterval:2.0
-//                                     target:self
-//                                   selector:@selector(logTimerCompletion)
-//                                   userInfo:nil
-//                                    repeats:YES];
-    
-    
+    [self.scrollView addSubview:self.imageView];
+    self.scrollView.minimumZoomScale = 0.1;
+    self.scrollView.delegate = self;
 }
 
 -(DataModel *)dataModel{
@@ -54,6 +53,9 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+-(UIView*) viewForZoomingInScrollView:(UIScrollView *)scrollView{
+    return self.imageView;
 }
 
 

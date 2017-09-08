@@ -185,37 +185,54 @@
                                     <segue destination="jfH-Qe-fqR" kind="show" id="4qy-70-iI7"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pokeball_icon" translatesAutoresizingMaskIntoConstraints="NO" id="pMv-QX-EgS">
-                                <rect key="frame" x="123" y="125" width="128" height="128"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RDU-lc-Bg8">
-                                <rect key="frame" x="172" y="377" width="30" height="30"/>
+                                <rect key="frame" x="173" y="356" width="30" height="30"/>
                                 <state key="normal" title="⚙"/>
                                 <connections>
                                     <segue destination="eST-RH-Lke" kind="presentation" id="SFy-bk-1ek"/>
                                 </connections>
                             </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zvW-Sb-lqe">
+                                <rect key="frame" x="70" y="128" width="235" height="182"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pokeball_icon" translatesAutoresizingMaskIntoConstraints="NO" id="pMv-QX-EgS">
+                                        <rect key="frame" x="37" y="8" width="161" height="174"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="174" id="fc9-E9-B8V"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="pMv-QX-EgS" firstAttribute="centerX" secondItem="zvW-Sb-lqe" secondAttribute="centerX" id="DYo-nq-ofy"/>
+                                    <constraint firstAttribute="bottom" secondItem="pMv-QX-EgS" secondAttribute="bottom" id="KO2-aD-kTw"/>
+                                    <constraint firstAttribute="trailing" secondItem="pMv-QX-EgS" secondAttribute="trailing" constant="37" id="kHf-lG-tN6"/>
+                                    <constraint firstItem="pMv-QX-EgS" firstAttribute="leading" secondItem="zvW-Sb-lqe" secondAttribute="leading" constant="37" id="la4-Oa-NRw"/>
+                                    <constraint firstItem="pMv-QX-EgS" firstAttribute="top" secondItem="zvW-Sb-lqe" secondAttribute="topMargin" id="lh6-BS-K3y"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="pMv-QX-EgS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="107" id="26K-Qs-fm9"/>
-                            <constraint firstItem="RDU-lc-Bg8" firstAttribute="top" secondItem="wU4-dw-Cto" secondAttribute="bottom" constant="29" id="7Jw-F0-0aS"/>
-                            <constraint firstItem="wU4-dw-Cto" firstAttribute="top" secondItem="pMv-QX-EgS" secondAttribute="bottom" constant="65" id="9xK-Rq-bbI"/>
-                            <constraint firstItem="RDU-lc-Bg8" firstAttribute="centerX" secondItem="wU4-dw-Cto" secondAttribute="centerX" id="EjP-MT-T1o"/>
-                            <constraint firstItem="wU4-dw-Cto" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Fc0-wh-ine"/>
-                            <constraint firstItem="pMv-QX-EgS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="61" id="Mhh-uZ-Yju"/>
-                            <constraint firstItem="wU4-dw-Cto" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bft-8H-LN3"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pMv-QX-EgS" secondAttribute="trailing" constant="108" id="oBP-Zc-YsB"/>
+                            <constraint firstItem="RDU-lc-Bg8" firstAttribute="top" secondItem="wU4-dw-Cto" secondAttribute="bottom" constant="8" symbolic="YES" id="Ggx-bJ-3ww"/>
+                            <constraint firstItem="zvW-Sb-lqe" firstAttribute="centerX" secondItem="wU4-dw-Cto" secondAttribute="centerX" id="HkW-W5-AA3"/>
+                            <constraint firstItem="wU4-dw-Cto" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Imo-7s-eZc"/>
+                            <constraint firstItem="wU4-dw-Cto" firstAttribute="centerX" secondItem="RDU-lc-Bg8" secondAttribute="centerX" id="dPY-PI-DxX"/>
+                            <constraint firstItem="wU4-dw-Cto" firstAttribute="top" secondItem="zvW-Sb-lqe" secondAttribute="bottom" constant="8" symbolic="YES" id="lOC-rf-s9T"/>
+                            <constraint firstItem="zvW-Sb-lqe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="54" id="rpR-Xv-yIn"/>
+                            <constraint firstItem="zvW-Sb-lqe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s25-GB-hZr"/>
+                            <constraint firstItem="zvW-Sb-lqe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="64" id="tll-BY-Xk0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QNX-PA-ndu"/>
                     <connections>
+                        <outlet property="imageView" destination="pMv-QX-EgS" id="AAs-bf-uyw"/>
+                        <outlet property="scrollView" destination="zvW-Sb-lqe" id="cwp-cW-HAM"/>
                         <outlet property="settingsButton" destination="RDU-lc-Bg8" id="VEa-Y9-yUu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-522" y="-767"/>
+            <point key="canvasLocation" x="-522.39999999999998" y="-767.76611694152928"/>
         </scene>
         <!--Collection View Controller-->
         <scene sceneID="N6o-H0-1Qn">
