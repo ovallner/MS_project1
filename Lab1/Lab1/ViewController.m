@@ -19,19 +19,30 @@
 -(NSMutableArray*)pokemonData{
     if(!_pokemonData) {
         _pokemonData = [NSMutableArray new];
-        NSError *e = nil;
         NSMutableString *urlString;
         NSURL *url;
-        NSData *data;
-        for(int i = 1; i <=5; i++){
-            NSDictionary *pokemonDict;
+        /*NSDictionary *emptyDict = [[NSMutableDictionary init] alloc];
+        for(int i =0; i < 20; i++){
+            [_pokemonData addObject: emptyDict];
+        }*/
+        for(int i = 1; i <=20; i++){
+            
             urlString = [NSMutableString stringWithFormat:@"https://pokeapi.co/api/v2/pokemon/%d/", i];
             url = [NSURL URLWithString:urlString];
-
-            data = [NSData dataWithContentsOfURL:url];
-            pokemonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&e];
-            [_pokemonData addObject:pokemonDict];
-            //NSLog(@"%@", _pokemonData[i-1][@"name"]);
+            NSURLSessionConfiguration *defaultConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+            NSURLSession *sessionWithoutADelegate = [NSURLSession sessionWithConfiguration:defaultConfiguration];
+            
+            [[sessionWithoutADelegate dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                if(error)
+                    NSLog(@"%@", error);
+                else{
+                    NSDictionary __block *pokemonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error: &error];
+                    [_pokemonData addObject:pokemonDict];
+                    //_pokemonData[i] = pokemonDict;
+                }
+            }] resume];
+            
+            
             
         }
     }
@@ -40,9 +51,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    NSLog(@"I sleep");
     
-    NSLog(@"asdf %@", self.pokemonData[3][@"name"]);
+    
+    NSDate *methodStart = [NSDate date];
+    
+    /* ... Do whatever you need to do ... */
+    
+    while([self.pokemonData count] < 20) {
+        [NSThread sleepForTimeInterval:1.0f];
+    }
+    
+    NSDate *methodFinish = [NSDate date];
+    NSTimeInterval executionTime = [methodFinish timeIntervalSinceDate:methodStart];
+    NSLog(@"executionTime of = %f", executionTime);
+    
+    
+    NSLog(@"asdf %@", self.pokemonData[19][@"name"]);
     
 }
 

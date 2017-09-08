@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55EAEA891F62607F004D3B43 /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 55EAEA881F62607F004D3B43 /* DataModel.m */; };
 		A3907A2E1F5F5CCF00431699 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A3907A2D1F5F5CCF00431699 /* main.m */; };
 		A3907A311F5F5CCF00431699 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3907A301F5F5CCF00431699 /* AppDelegate.m */; };
 		A3907A341F5F5CCF00431699 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3907A331F5F5CCF00431699 /* ViewController.m */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		55EAEA881F62607F004D3B43 /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
+		55EAEA8A1F626090004D3B43 /* DataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
 		A3907A291F5F5CCF00431699 /* Lab1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lab1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3907A2D1F5F5CCF00431699 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A3907A2F1F5F5CCF00431699 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -105,6 +108,8 @@
 				A3907A301F5F5CCF00431699 /* AppDelegate.m */,
 				A3907A321F5F5CCF00431699 /* ViewController.h */,
 				A3907A331F5F5CCF00431699 /* ViewController.m */,
+				55EAEA881F62607F004D3B43 /* DataModel.m */,
+				55EAEA8A1F626090004D3B43 /* DataModel.h */,
 				A3907A351F5F5CCF00431699 /* Main.storyboard */,
 				A3907A381F5F5CCF00431699 /* Assets.xcassets */,
 				A3907A3A1F5F5CCF00431699 /* LaunchScreen.storyboard */,
@@ -274,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3907A341F5F5CCF00431699 /* ViewController.m in Sources */,
+				55EAEA891F62607F004D3B43 /* DataModel.m in Sources */,
 				A3907A311F5F5CCF00431699 /* AppDelegate.m in Sources */,
 				A3907A2E1F5F5CCF00431699 /* main.m in Sources */,
 			);
