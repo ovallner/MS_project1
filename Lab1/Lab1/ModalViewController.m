@@ -23,6 +23,14 @@
 - (IBAction)closeModal:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+- (IBAction)switchClicked:(UISwitch *)sender {
+    if([sender isOn]){
+        self.view.backgroundColor = [UIColor yellowColor];
+    } else {
+        self.view.backgroundColor = [UIColor whiteColor];
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
