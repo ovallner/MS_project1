@@ -26,6 +26,50 @@
             </objects>
             <point key="canvasLocation" x="-1532" y="-766"/>
         </scene>
+        <!--Modal View Controller-->
+        <scene sceneID="0E2-vk-vRc">
+            <objects>
+                <viewController id="eST-RH-Lke" customClass="ModalViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Hqf-5U-ChL"/>
+                        <viewControllerLayoutGuide type="bottom" id="xT0-2l-ZO6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jSs-fE-Vz6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gJz-uy-Odv">
+                                <rect key="frame" x="163" y="156" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Theme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s62-m9-yIX">
+                                <rect key="frame" x="101" y="161" width="54" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUo-PV-Akn">
+                                <rect key="frame" x="168" y="551" width="39" height="30"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="closeModal:" destination="eST-RH-Lke" eventType="touchUpInside" id="tIG-Gp-ZNX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gJz-uy-Odv" firstAttribute="centerX" secondItem="VUo-PV-Akn" secondAttribute="centerX" id="Fr2-uf-i4a"/>
+                            <constraint firstItem="gJz-uy-Odv" firstAttribute="leading" secondItem="s62-m9-yIX" secondAttribute="trailing" constant="8" symbolic="YES" id="Ftm-zc-uVP"/>
+                            <constraint firstItem="xT0-2l-ZO6" firstAttribute="top" secondItem="VUo-PV-Akn" secondAttribute="bottom" constant="86" id="Gb4-eU-h3c"/>
+                            <constraint firstItem="s62-m9-yIX" firstAttribute="centerY" secondItem="gJz-uy-Odv" secondAttribute="centerY" id="Ha9-QG-yYz"/>
+                            <constraint firstItem="gJz-uy-Odv" firstAttribute="centerX" secondItem="jSs-fE-Vz6" secondAttribute="centerX" id="Poq-05-1Tu"/>
+                            <constraint firstItem="gJz-uy-Odv" firstAttribute="top" secondItem="Hqf-5U-ChL" secondAttribute="bottom" constant="136" id="lWu-9Z-odN"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YrH-c8-Old" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-522.39999999999998" y="116.49175412293854"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -51,6 +95,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RDU-lc-Bg8">
                                 <rect key="frame" x="172" y="377" width="30" height="30"/>
                                 <state key="normal" title="⚙"/>
+                                <connections>
+                                    <segue destination="eST-RH-Lke" kind="presentation" id="SFy-bk-1ek"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -66,6 +113,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QNX-PA-ndu"/>
+                    <connections>
+                        <outlet property="settingsButton" destination="RDU-lc-Bg8" id="VEa-Y9-yUu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -75,7 +125,7 @@
         <scene sceneID="N6o-H0-1Qn">
             <objects>
                 <collectionViewController id="jfH-Qe-fqR" customClass="CollectionViewController" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="w7g-el-q7u">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="w7g-el-q7u">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

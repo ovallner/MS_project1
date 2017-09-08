@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		557745361F630EE200C40A1C /* ModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 557745351F630EE200C40A1C /* ModalViewController.m */; };
 		A33081431F6248C9008C8244 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A33081421F6248C9008C8244 /* CollectionViewCell.m */; };
 		A33081471F62517D008C8244 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A33081461F62517D008C8244 /* TableViewController.m */; };
 		A330814A1F62521E008C8244 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A33081491F62521E008C8244 /* TableViewCell.m */; };
@@ -41,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		557745341F630EE200C40A1C /* ModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalViewController.h; sourceTree = "<group>"; };
+		557745351F630EE200C40A1C /* ModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalViewController.m; sourceTree = "<group>"; };
 		A33081411F6248C9008C8244 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		A33081421F6248C9008C8244 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		A33081451F62517D008C8244 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
@@ -124,6 +127,8 @@
 				A3907A321F5F5CCF00431699 /* ViewController.h */,
 				A3907A331F5F5CCF00431699 /* ViewController.m */,
 				A3907A351F5F5CCF00431699 /* Main.storyboard */,
+				557745341F630EE200C40A1C /* ModalViewController.h */,
+				557745351F630EE200C40A1C /* ModalViewController.m */,
 				A33081411F6248C9008C8244 /* CollectionViewCell.h */,
 				A33081421F6248C9008C8244 /* CollectionViewCell.m */,
 				A365354E1F60EE970004D300 /* SearchCollectionReusableView.h */,
@@ -305,6 +310,7 @@
 			files = (
 				A33081431F6248C9008C8244 /* CollectionViewCell.m in Sources */,
 				A365354D1F60EC0C0004D300 /* CollectionViewController.m in Sources */,
+				557745361F630EE200C40A1C /* ModalViewController.m in Sources */,
 				A3D7C3981F627B2B00DBA5F3 /* DataModel.m in Sources */,
 				A3907A341F5F5CCF00431699 /* ViewController.m in Sources */,
 				A3907A311F5F5CCF00431699 /* AppDelegate.m in Sources */,

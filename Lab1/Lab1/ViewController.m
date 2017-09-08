@@ -8,8 +8,10 @@
 
 #import "ViewController.h"
 #import "DataModel.h"
+#import "ModalViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 
 @end
 
@@ -19,8 +21,26 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [DataModel sharedInstance].pokemonData;
+    [NSTimer scheduledTimerWithTimeInterval:2.0
+                                     target:self
+                                   selector:@selector(logTimerCompletion)
+                                   userInfo:nil
+                                    repeats:YES];
+    
+    
 }
 
+-(void)showModal:(id)sender {
+    ModalViewController *modalView = [[ModalViewController alloc] init];
+    
+    modalView.modalPresentationStyle = UIModalPresentationFormSheet;
+    modalView.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentViewController:modalView animated:YES completion:nil];
+}
+
+-(void)logTimerCompletion {
+    NSLog(@"Timer finished!");
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
