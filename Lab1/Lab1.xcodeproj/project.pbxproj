@@ -20,6 +20,7 @@
 		A3907A3C1F5F5CCF00431699 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3907A3A1F5F5CCF00431699 /* LaunchScreen.storyboard */; };
 		A3907A471F5F5CCF00431699 /* Lab1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = A3907A461F5F5CCF00431699 /* Lab1Tests.m */; };
 		A3907A521F5F5CCF00431699 /* Lab1UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A3907A511F5F5CCF00431699 /* Lab1UITests.m */; };
+		A3D7C3981F627B2B00DBA5F3 /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A3D7C3971F627B2B00DBA5F3 /* DataModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		A3907A4D1F5F5CCF00431699 /* Lab1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Lab1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3907A511F5F5CCF00431699 /* Lab1UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Lab1UITests.m; sourceTree = "<group>"; };
 		A3907A531F5F5CCF00431699 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3D7C3961F627B2B00DBA5F3 /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
+		A3D7C3971F627B2B00DBA5F3 /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +133,8 @@
 				A33081491F62521E008C8244 /* TableViewCell.m */,
 				A365354F1F60EE970004D300 /* SearchCollectionReusableView.m */,
 				A365354B1F60EC0C0004D300 /* CollectionViewController.h */,
+				A3D7C3961F627B2B00DBA5F3 /* DataModel.h */,
+				A3D7C3971F627B2B00DBA5F3 /* DataModel.m */,
 				A365354C1F60EC0C0004D300 /* CollectionViewController.m */,
 				A3907A381F5F5CCF00431699 /* Assets.xcassets */,
 				A3907A3A1F5F5CCF00431699 /* LaunchScreen.storyboard */,
@@ -300,6 +305,7 @@
 			files = (
 				A33081431F6248C9008C8244 /* CollectionViewCell.m in Sources */,
 				A365354D1F60EC0C0004D300 /* CollectionViewController.m in Sources */,
+				A3D7C3981F627B2B00DBA5F3 /* DataModel.m in Sources */,
 				A3907A341F5F5CCF00431699 /* ViewController.m in Sources */,
 				A3907A311F5F5CCF00431699 /* AppDelegate.m in Sources */,
 				A36535501F60EE970004D300 /* SearchCollectionReusableView.m in Sources */,

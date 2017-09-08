@@ -10,11 +10,19 @@
 #import "CollectionViewCell.h"
 #import "SearchCollectionReusableView.h"
 #import "TableViewController.h"
+#import "DataModel.h"
 @interface CollectionViewController () <UISearchBarDelegate, UICollectionViewDelegate>
-
+@property (strong, nonatomic) DataModel* dataModel;
 @end
 
 @implementation CollectionViewController
+
+-(DataModel *)dataModel{
+    if(!_dataModel){
+        _dataModel = [DataModel sharedInstance];
+    }
+    return _dataModel;
+}
 
 static NSString * const reuseIdentifier = @"CollectCell";
 
@@ -59,18 +67,14 @@ static NSString * const reuseIdentifier = @"CollectCell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 28;
+    NSLog(@"%lu",(unsigned long)[self.dataModel.pokemonData count]);
+    return [self.dataModel.pokemonData count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    // Configure the cell
-    //[cell layoutSubviews];
-    //cell.backgroundColor = [UIColor blueColor];
-    cell.pokeSprite.image = [UIImage imageNamed:@"1"];
-    cell.pokeNameLabel.text = @"Jamaal";
-    //NSLog(@"%@", cell.pokeName.text);
+    cell.pokeSprite.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@",self.dataModel.pokemonData[indexPath.row][@"id"]]];
+    cell.pokeNameLabel.text = self.dataModel.pokemonData[indexPath.row][@"name"];
     return cell;
 }
 
