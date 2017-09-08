@@ -24,7 +24,7 @@
 }
 
 -(NSMutableArray*)pokemonData{
-    if(!_pokemonData) {
+    if(! _pokemonData) {
         _pokemonData = [[NSMutableArray alloc] init];
         NSMutableString *urlString;
         NSURL *url;
@@ -54,7 +54,14 @@
     return _pokemonData;
 }
 
-
+-(NSDictionary*)getPokemonByID: (int) idNum {
+    for(int i = 0; i < [self.pokemonData count]; i++){
+        if(idNum == [self.pokemonData[i][@"id"] integerValue]) {
+            return self.pokemonData[i];
+        }
+    }
+    return nil;
+}
 
 
 @end

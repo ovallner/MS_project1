@@ -8,5 +8,6 @@
 #import <UIKit/UIKit.h>
 @interface DataModel : UIResponder <UIApplicationDelegate>
 +(DataModel*) sharedInstance;
+-(NSDictionary*) getPokemonByID: (int) idNum;
 @property (strong, nonatomic) NSMutableArray *pokemonData;
 @end

@@ -28,6 +28,9 @@ static NSString * const reuseIdentifier = @"CollectCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //NSDictionary *myDict = [self.dataModel getPokemonByID: 3];
+    
+    NSLog(@"%@", [self.dataModel getPokemonByID: 3][@"name"]);
     
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
