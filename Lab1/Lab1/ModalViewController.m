@@ -9,7 +9,8 @@
 #import "ModalViewController.h"
 
 @interface ModalViewController ()
-
+@property (weak, nonatomic) IBOutlet UILabel *timeCounter;
+@property (nonatomic) NSInteger count;
 
 @end
 
@@ -18,6 +19,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [NSTimer scheduledTimerWithTimeInterval:1.0
+                                     target:self
+                                   selector:@selector(incrementCounter)
+                                   userInfo:nil
+                                    repeats:YES];
 
 }
 - (IBAction)closeModal:(id)sender {
@@ -35,6 +42,17 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(NSInteger)count {
+    if(!_count)
+        _count = 0;
+    return _count;
+}
+
+-(void)incrementCounter {
+    self.count++;
+    self.timeCounter.text = [NSString stringWithFormat:@"%ld", self.count];
 }
 
 /*

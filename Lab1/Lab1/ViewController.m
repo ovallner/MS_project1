@@ -21,11 +21,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [DataModel sharedInstance].pokemonData;
-    [NSTimer scheduledTimerWithTimeInterval:2.0
-                                     target:self
-                                   selector:@selector(logTimerCompletion)
-                                   userInfo:nil
-                                    repeats:YES];
     
     
 }

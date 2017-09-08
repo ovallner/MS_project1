@@ -57,17 +57,32 @@
                                     <action selector="closeModal:" destination="eST-RH-Lke" eventType="touchUpInside" id="tIG-Gp-ZNX"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uos-Ib-ZVQ">
+                                <rect key="frame" x="307" y="614" width="68" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="xT0-2l-ZO6" firstAttribute="top" secondItem="Uos-Ib-ZVQ" secondAttribute="bottom" constant="20" id="10w-PB-wA0"/>
+                            <constraint firstAttribute="trailing" secondItem="Uos-Ib-ZVQ" secondAttribute="trailing" id="22f-C6-UvF"/>
                             <constraint firstItem="gJz-uy-Odv" firstAttribute="centerX" secondItem="VUo-PV-Akn" secondAttribute="centerX" id="Fr2-uf-i4a"/>
                             <constraint firstItem="gJz-uy-Odv" firstAttribute="leading" secondItem="s62-m9-yIX" secondAttribute="trailing" constant="8" symbolic="YES" id="Ftm-zc-uVP"/>
                             <constraint firstItem="xT0-2l-ZO6" firstAttribute="top" secondItem="VUo-PV-Akn" secondAttribute="bottom" constant="86" id="Gb4-eU-h3c"/>
                             <constraint firstItem="s62-m9-yIX" firstAttribute="centerY" secondItem="gJz-uy-Odv" secondAttribute="centerY" id="Ha9-QG-yYz"/>
+                            <constraint firstItem="Uos-Ib-ZVQ" firstAttribute="leading" secondItem="jSs-fE-Vz6" secondAttribute="leading" constant="307" id="I8Z-a8-Td4"/>
+                            <constraint firstItem="Uos-Ib-ZVQ" firstAttribute="centerX" secondItem="jSs-fE-Vz6" secondAttribute="centerX" id="OfD-xk-sGC"/>
                             <constraint firstItem="gJz-uy-Odv" firstAttribute="centerX" secondItem="jSs-fE-Vz6" secondAttribute="centerX" id="Poq-05-1Tu"/>
                             <constraint firstItem="gJz-uy-Odv" firstAttribute="top" secondItem="Hqf-5U-ChL" secondAttribute="bottom" constant="136" id="lWu-9Z-odN"/>
+                            <constraint firstItem="Uos-Ib-ZVQ" firstAttribute="top" secondItem="Hqf-5U-ChL" secondAttribute="bottom" constant="594" id="sZD-vB-tv1"/>
+                            <constraint firstItem="Uos-Ib-ZVQ" firstAttribute="centerY" secondItem="jSs-fE-Vz6" secondAttribute="centerY" id="vTZ-Tv-roL"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="timeCounter" destination="Uos-Ib-ZVQ" id="fTa-GT-81d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YrH-c8-Old" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
