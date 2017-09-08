@@ -75,7 +75,7 @@
         <scene sceneID="N6o-H0-1Qn">
             <objects>
                 <collectionViewController id="jfH-Qe-fqR" customClass="CollectionViewController" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="w7g-el-q7u">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="w7g-el-q7u">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -86,7 +86,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PokeCell" id="ALn-6W-NvL" customClass="CollectionViewCell">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="CollectCell" reuseIdentifier="CollectCell" id="ALn-6W-NvL" customClass="CollectionViewCell">
                                 <rect key="frame" x="0.0" y="50" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -94,31 +94,27 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dpH-7z-QvC">
-                                            <rect key="frame" x="-70" y="-14" width="240" height="128"/>
+                                            <rect key="frame" x="4" y="0.0" width="96" height="100"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PokeName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T61-Dk-bpH">
-                                            <rect key="frame" x="0.0" y="79" width="100" height="21"/>
-                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDh-ds-1dx">
+                                            <rect key="frame" x="29" y="79" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="dpH-7z-QvC" secondAttribute="trailing" constant="-70" id="5ny-KP-Jnb"/>
-                                    <constraint firstItem="dpH-7z-QvC" firstAttribute="leading" secondItem="ALn-6W-NvL" secondAttribute="leading" constant="-70" id="GCK-85-1OH"/>
-                                    <constraint firstAttribute="bottom" secondItem="T61-Dk-bpH" secondAttribute="bottom" id="ILd-d6-e7Q"/>
-                                    <constraint firstItem="T61-Dk-bpH" firstAttribute="leading" secondItem="ALn-6W-NvL" secondAttribute="leading" id="SGf-I4-BFx"/>
-                                    <constraint firstAttribute="trailing" secondItem="T61-Dk-bpH" secondAttribute="trailing" id="htb-xa-vvK"/>
-                                    <constraint firstAttribute="bottom" secondItem="dpH-7z-QvC" secondAttribute="bottom" constant="-14" id="vKl-cH-R0z"/>
-                                    <constraint firstItem="dpH-7z-QvC" firstAttribute="top" secondItem="ALn-6W-NvL" secondAttribute="top" constant="-14" id="xTI-OW-3w9"/>
-                                    <constraint firstItem="T61-Dk-bpH" firstAttribute="top" secondItem="ALn-6W-NvL" secondAttribute="top" constant="79" id="xjN-5p-1wq"/>
+                                    <constraint firstAttribute="trailing" secondItem="dpH-7z-QvC" secondAttribute="trailing" id="Jtm-rE-YAi"/>
+                                    <constraint firstItem="dpH-7z-QvC" firstAttribute="bottom" secondItem="vDh-ds-1dx" secondAttribute="bottom" id="McA-t8-mfH"/>
+                                    <constraint firstItem="dpH-7z-QvC" firstAttribute="top" secondItem="ALn-6W-NvL" secondAttribute="top" id="T0o-xX-1Vw"/>
+                                    <constraint firstItem="vDh-ds-1dx" firstAttribute="centerX" secondItem="ALn-6W-NvL" secondAttribute="centerX" id="he5-qc-KIF"/>
+                                    <constraint firstAttribute="bottom" secondItem="dpH-7z-QvC" secondAttribute="bottom" id="jwE-7e-3k0"/>
+                                    <constraint firstItem="dpH-7z-QvC" firstAttribute="leading" secondItem="ALn-6W-NvL" secondAttribute="leadingMargin" constant="-4" id="qMe-bE-BCa"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="imageView" destination="dpH-7z-QvC" id="wIC-gp-rSe"/>
-                                    <outlet property="pokeName" destination="T61-Dk-bpH" id="00g-cZ-PGY"/>
-                                    <outlet property="pokeSprite" destination="dpH-7z-QvC" id="55I-KN-CA6"/>
-                                    <segue destination="Z1t-7h-EGp" kind="show" id="C2W-9W-v0O"/>
+                                    <outlet property="pokeNameLabel" destination="vDh-ds-1dx" id="zeN-qf-TD4"/>
+                                    <outlet property="pokeSprite" destination="dpH-7z-QvC" id="BGj-au-R4K"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

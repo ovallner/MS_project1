@@ -10,7 +10,12 @@
 
 @interface CollectionViewCell : UICollectionViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *pokeSprite;
-@property (weak, nonatomic) IBOutlet UILabel *pokeName;
+//@property (weak, nonatomic) IBOutlet UIImageView *pokeSprite;
+//
+//@property (weak, nonatomic) IBOutlet UILabel *pokeNameLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *pokeSprite;
+
+@property (strong, nonatomic) IBOutlet UILabel *pokeNameLabel;
+
 
 @end

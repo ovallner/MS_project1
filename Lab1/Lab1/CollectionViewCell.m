@@ -7,8 +7,16 @@
 //
 
 #import "CollectionViewCell.h"
+#import <UIKit/UIKit.h>
 
 @implementation CollectionViewCell
 
+//- (id)initWithFrame:(CGRect)aRect
+//{
+//    if ((self = [super initWithFrame:aRect])) {
+//        self.pokeNameLabel  = [[UILabel alloc] init];
+//    }
+//    return self;
+//}
 
 @end

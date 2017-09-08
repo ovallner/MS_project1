@@ -7,15 +7,16 @@
 //
 
 #import "CollectionViewController.h"
+#import "CollectionViewCell.h"
 #import "SearchCollectionReusableView.h"
 #import "TableViewController.h"
-@interface CollectionViewController () <UISearchBarDelegate>
+@interface CollectionViewController () <UISearchBarDelegate, UICollectionViewDelegate>
 
 @end
 
 @implementation CollectionViewController
 
-static NSString * const reuseIdentifier = @"PokeCell";
+static NSString * const reuseIdentifier = @"CollectCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,8 +25,7 @@ static NSString * const reuseIdentifier = @"PokeCell";
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    
+    //[self.collectionView registerClass:[CollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     // Do any additional setup after loading the view.
 }
 
@@ -57,10 +57,13 @@ static NSString * const reuseIdentifier = @"PokeCell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    
+    CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     // Configure the cell
-    cell.backgroundColor = [UIColor greenColor];
+    //[cell layoutSubviews];
+    //cell.backgroundColor = [UIColor blueColor];
+    cell.pokeSprite.image = [UIImage imageNamed:@"1"];
+    cell.pokeNameLabel.text = @"Jamaal";
+    //NSLog(@"%@", cell.pokeName.text);
     return cell;
 }
 
